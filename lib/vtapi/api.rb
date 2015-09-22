@@ -11,6 +11,14 @@ class VtAPI
   def initialize(apikey)
     @apikey = apikey
   end
+  
+  def false_positives
+    http_get('file/false-positives')
+  end
+
+  def file_download(hash)
+    http_get('file/download', hash: hash)
+  end
 
   def file_scan(data)
     # TODO: set filename or file path
